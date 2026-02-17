@@ -1,38 +1,17 @@
 package model;
 
-public class Developer extends Employee{
+public class Developer extends Employee {
+    private int overTimeHours;
 
-    public Developer(String name, double baseSalary, int attendanceDays, int performanceRating) {
+    public Developer(String name, double baseSalary, int attendanceDays, int performanceRating, int overTimeHours) {
         super(name, baseSalary, attendanceDays, performanceRating);
+        this.overTimeHours = overTimeHours;
     }
 
     @Override
     public void calculateGrossSalary() {
-
-    }
-
-    @Override
-    public void calculatePerformanceBonus() {
-
-    }
-
-    @Override
-    public void calculateTaxSlab() {
-
-    }
-
-    @Override
-    public void calculatePFDeduction() {
-
-    }
-
-    @Override
-    public void calculateAttendanceDeduction() {
-
-    }
-
-    @Override
-    public void netSalaryCalculation() {
-
+        double grossSalary;
+        grossSalary = getBaseSalary() + overTimeHours * 500;
+        setGrossSalary(grossSalary);
     }
 }

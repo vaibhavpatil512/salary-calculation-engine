@@ -1,38 +1,17 @@
 package model;
 
 public class Manager extends Employee{
+    private int teamSize;
 
-    public Manager(String name, double baseSalary, int attendanceDays, int performanceRating) {
+    public Manager(String name, double baseSalary, int attendanceDays, int performanceRating, int teamSize) {
         super(name, baseSalary, attendanceDays, performanceRating);
+        this.teamSize = teamSize;
     }
 
     @Override
     public void calculateGrossSalary() {
-
-    }
-
-    @Override
-    public void calculatePerformanceBonus() {
-
-    }
-
-    @Override
-    public void calculateTaxSlab() {
-
-    }
-
-    @Override
-    public void calculatePFDeduction() {
-
-    }
-
-    @Override
-    public void calculateAttendanceDeduction() {
-
-    }
-
-    @Override
-    public void netSalaryCalculation() {
-
+        double grossSalary;
+        grossSalary = getBaseSalary() + teamSize * 1000;
+        setGrossSalary(grossSalary);
     }
 }

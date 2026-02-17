@@ -8,31 +8,13 @@ public class Intern extends Employee{
 
     @Override
     public void calculateGrossSalary() {
-
-    }
-
-    @Override
-    public void calculatePerformanceBonus() {
-
-    }
-
-    @Override
-    public void calculateTaxSlab() {
-
-    }
-
-    @Override
-    public void calculatePFDeduction() {
-
-    }
-
-    @Override
-    public void calculateAttendanceDeduction() {
-
-    }
-
-    @Override
-    public void netSalaryCalculation() {
-
+        double attendancePercent = (double)(getAttendanceDays() / 30) * 100;
+        double grossSalary=0;
+        if(attendancePercent<70){
+            grossSalary = getBaseSalary() - (getBaseSalary() * 0.20);
+        }else{
+            grossSalary = getBaseSalary();
+        }
+        setGrossSalary(grossSalary);
     }
 }
